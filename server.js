@@ -1,9 +1,12 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const Product = require('./models/productModels');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
+// Variables
+const PORT = process.env.PORT || PORT;
+const MONGO_URL = process.env.MONGO_URL
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -76,10 +79,10 @@ app.post('/product', async(req, res) => {
 
 // Connect to the database
 mongoose.set("strictQuery", false);
-mongoose.connect('mongodb://127.0.0.1:27017/node_api')
+mongoose.connect(MONGO_URL)
   .then(() => {
     console.log('Connected to database')
-    server.listen(PORT, () => console.log('The server is listening on http://localhost:${PORT}'));
+    server.listen(PORT, () => console.log(`The server is listening on ${PORT}`));
   }).catch((err) => {
     console.log('Error connecting to database')
   });
