@@ -80,3 +80,6 @@ In case of any errors, the API will respond with an appropriate status code and 
 The Node API for product management provides a robust backend solution for managing products. With the provided endpoints, you can perform CRUD operations on products, enabling easy management and manipulation of product data in your application.
 
 Feel free to explore the API endpoints and integrate them into your frontend application or utilize them for any other purposes related to product management.
+
+## Author
+* ** Jenaide Sibolie ** - [Jenaide](https://github.com/Jenaide)
